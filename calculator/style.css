@@ -15,9 +15,9 @@ html, body {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     min-height: 100%;
 }
 
@@ -38,18 +38,19 @@ html, body {
     flex-direction: column;
     background-color: white;
     gap: 30px;
-    padding: 15px;
+    margin: 15px;
     width: 380px;
     height: 120px;
     border-radius: 25px;
     justify-content: space-between;
     align-items: flex-end;
-    overflow: hidden;
+    box-shadow: #9c9c9c9c 0px 3px 8px;
 }
 
 .buttons-grid {
     display: grid;
     padding-top: 10px;
+    width: 380px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "clear clear delete delete"
                          "seven eight nine divide"
@@ -66,7 +67,31 @@ html, body {
     color: grey;
     font-family: inherit;
     background-color: #f3f3f3;
+    cursor: pointer;
+    box-shadow: #9c9c9c9c 0px 3px 8px;
 }
 .button:hover {
     background-color: #b8b8b8b8;
+    transform: scale(1.05);
+}
+#clear,
+#delete {
+    grid-column: span 2;
+}
+
+.operation:hover {
+    background-color: orange;
+    color: #f3f3f3;
+}
+#equals:hover {
+    background-color: lightgreen;
+    color: #f3f3f3;
+}
+#clear:hover {
+    background-color: red;
+    color: #f3f3f3;
+}
+#delete:hover {
+    background-color: blue;
+    color: #f3f3f3;
 }
