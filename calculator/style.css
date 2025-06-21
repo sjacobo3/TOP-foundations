@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+* {
+    background-color: lightgray;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+html, body {
+    height: 100%;
+    font-size: 16px;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 550px;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 30px;
+    padding: 15px;
+    width: 380px;
+    height: 120px;
+    border-radius: 25px;
+    justify-content: space-between;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.buttons-grid {
+    display: grid;
+    padding-top: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "clear clear delete delete"
+                         "seven eight nine divide"
+                         "four five six multiply"
+                         "one two three subtract"
+                         "decimal zero equals add";
+    grid-auto-rows: 70px;
+    gap: 10px;
+}
+
+.button {
+    font-size: 30px;
+    border-radius: 20px;
+    color: grey;
+    font-family: inherit;
+    background-color: #f3f3f3;
+}
+.button:hover {
+    background-color: #b8b8b8b8;
+}
