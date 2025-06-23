@@ -2,10 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
+    display: flex;
     background-color: lightgray;
     transition: background-color 0.3s ease, color 0.3s ease;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -24,28 +29,40 @@ body {
     min-width: 280px;
     max-width: 400px;
     text-align: left;
+    padding-left:20px;
 }
+#introParagraph {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+#introHeader {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 4.5rem;;
+    margin: 1px;
+}
+
 .themes {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 }
 .button-theme {
-    font-weight: 600;
-    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 20px;
     padding: 10px 20px;
-    border-radius: 999px;
-    border: 2px solid #000;
     cursor: pointer;
+    border: none;
+    border-radius: 20px;
     box-shadow: #9c9c9c9c 0px 3px 8px;
 }
 /* when hovering, change button to theme */
 .western:hover {
     font-family: "Rye", serif;
+    color: #4b2e00;
     font-weight: 600;
+    background-color: #f8e0b0;
     border: 4px solid #4b2e00;
-    background-image: url('https://tse3.mm.bing.net/th?id=OIP.15lxJS6Miub8z6PGbHBWTwHaEo&pid=Api&P=0&h=220');
-    color: #ffffff;
     border-radius: 6px;
     box-shadow: 4px 4px 0 #00000055;
     transform: rotate(-1deg) scale(1.02);
@@ -113,7 +130,7 @@ body {
     align-items: flex-end;
     box-shadow: #9c9c9c9c 0px 3px 8px;
     overflow: hidden;
-    padding: 10px;
+    padding: 15px;
     font-size: 36px;
     align-items: end;
 }
@@ -174,7 +191,7 @@ body {
 }
 
 /* when the screen is less than 700px */
-@media (max-width:930px) {
+@media (max-width:850px) {
     .container {
         flex-direction: column;
         align-items: center;
@@ -198,21 +215,13 @@ body.theme-western button {
     font-family: "Rye", serif;
     color: #4b2e00;
 }
-
-/* ============ Dark Theme ============= */
-body.theme-dark {
-    background-color: #121212;
-    color: white;
-    font-family: "JetBrains Mono", monospace;
-}
-body.theme-dark .display {
-    background-color: #1d1d1d;
-    color: white;
-}
-body.theme-dark button {
-    background-color: #333;
-    color: white;
-    border: 1px solid #555;
+/* button color settings */
+body.theme-western .operation:hover,
+body.theme-western #equals:hover,
+body.theme-western #clear:hover,
+body.theme-western #delete:hover {
+    background-color: lightsalmon;
+    color: #f3f3f3;
 }
 
 /* ============ Comic Book Theme ============= */
@@ -224,20 +233,20 @@ body.theme-comic {
 body.theme-comic .container{
     font-family: "Bangers", system-ui;
     min-height: 100%;
+    width: auto;
     background-size: 100%;
-    background-blend-mode: lighten;
-    border: 4px solid black;
     border-radius: 8px;
-    box-shadow: 3px 3px 0 black;
     transition: all 0.2s ease-in-out;
 }
 body.theme-comic .display {
+    color: black;
     font-family: "Bangers", system-ui;
     font-size: 45px;
     border: 4px solid black;
     border-radius: 8px;
     box-shadow: 3px 3px 0 black;
     text-shadow: 1px 1px 0 #000;
+    transform: rotate(-1deg);
     transition: all 0.2s ease-in-out;
 }
 body.theme-comic button {
@@ -246,7 +255,6 @@ body.theme-comic button {
     border: 4px solid black;
     border-radius: 8px;
     box-shadow: 3px 3px 0 black;
-    transform: rotate(-1deg);
     transition: all 0.2s ease-in-out;
 }
 /* comic button settings */
@@ -270,4 +278,35 @@ body.theme-comic #clear {
 body.theme-comic #delete {
     background-color: black;
     color: #f1c40f;
+}
+
+/* ============ Dark Theme ============= */
+body.theme-dark {
+    font-family: "JetBrains Mono",monospace;
+    background-color: #121212;
+    color: white;
+}
+body.theme-comic .container{
+    font-family: "JetBrains Mono",monospace;
+    transition: all 0.2s ease-in-out;
+}
+body.theme-dark .display {
+    font-family: "JetBrains Mono",monospace;
+    background-color: #1d1d1d;
+    color: white;
+}
+body.theme-dark button {
+    font-family: "JetBrains Mono",monospace;
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+/* button color settings */
+body.theme-dark .number:hover,
+body.theme-dark .operation:hover,
+body.theme-dark #equals:hover,
+body.theme-dark #clear:hover,
+body.theme-dark #delete:hover {
+    background-color: #333;
+    color: #f3f3f3;
 }
