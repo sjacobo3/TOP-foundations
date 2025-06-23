@@ -231,15 +231,21 @@ switchButtons.forEach(button => {
     button.addEventListener("click", () => {
         // Remove all theme classes from the body
         document.body.classList.remove("theme-comic", "theme-western", "theme-dark", "theme-default");
-        let introText = document.body.querySelector("introText");
+        const introParagraph = document.getElementById("introParagraph");
+        const introHeader = document.getElementById("introHeader");
+        introParagraph.style.display = "none";
+        introHeader.style.display = "none";
 
         // Add the selected theme class
         const selectedTheme = button.value.toLowerCase();
 
         // Add class only if it's not default
         if (selectedTheme !== "default") {
-            introText = "";
             document.body.classList.add(`theme-${selectedTheme}`);
+        } else {
+            // show introParagraph and introHeader
+            introParagraph.style.display = "block";
+            introHeader.style.display = "block";
         }
     });
 });
