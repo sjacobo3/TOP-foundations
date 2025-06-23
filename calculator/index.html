@@ -9,30 +9,41 @@
 
     <body>
         <div class="container">
+            <div class="intro">
+                <p id="introText">this calculator is looking very plain.</p>
+                <h1 id="introText">spice it up.</h1>
+                <div class="themes">
+                    <button class="button-theme western" value="western">western</button>
+                    <button class="button-theme comic" value="comic">comic book</button>
+                    <button class="button-theme dark" value="dark">dark</button>
+                    <button class="button-theme default" value="default">default</button>
+                </div>
+            </div>
+
             <div class="calculator">
                 <div class="display">
-                    <div id="calculation"></div>
-                    <div id="input"></div>
+                    <div id="display-calculation">0</div>
+                    <div id="display-input">0</div>
                 </div>
                 <div class="buttons-grid">
                     <button class="button" id="clear">CLEAR</button>
-                    <button class="button" id="delete">DELETE</button>
+                    <button class="button" id="delete">DEL</button> 
+                    <button class="button operation" id="divide">÷</button>
                     <button class="button number" id="seven" value="7">7</button>
                     <button class="button number" id="eight" value="8">8</button>
                     <button class="button number" id="nine" value="9">9</button>
-                    <button class="button operation" id="divide">÷</button>
+                    <button class="button operation" id="add">+</button>
                     <button class="button number" id="four" value="4">4</button>
                     <button class="button number" id="five" value="5">5</button>
                     <button class="button number" id="six" value="6">6</button>
-                    <button class="button operation" id="multiply">×</button>
+                    <button class="button operation" id="subtract">-</button>
                     <button class="button number" id="one" value="1">1</button>
                     <button class="button number" id="two" value="2">2</button>
                     <button class="button number" id="three" value="3">3</button>
-                    <button class="button operation" id="subtract">-</button>
+                    <button class="button operation" id="multiply">×</button>
                     <button class="button" id="decimal">.</button>
                     <button class="button number" id="zero" value="0">0</button>
                     <button class="button" id="equals">=</button>
-                    <button class="button operation" id="add">+</button>
                 </div>
             </div>
         </div>
