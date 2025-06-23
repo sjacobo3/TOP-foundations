@@ -6,8 +6,8 @@ let result = 0; // stores the result of the calculation
 
 const MAX_DIGITS = 12; // maximum number of digits allowed in the display
 
-const outputText = document.getElementById('calculation'); // Top display for the ongoing calculation
-const resultText = document.getElementById('input'); // Main display for the current number/result
+const outputText = document.getElementById('display-calculation'); // Top display for the ongoing calculation
+const resultText = document.getElementById('display-input'); // Main display for the current number/result
 
 // HELPER FUNCTIONS
 function updateMainDisplay(value) {
@@ -16,7 +16,6 @@ function updateMainDisplay(value) {
         resultText.textContent = "TOO BIG";
         return true;        // indicate value is too big
     } else {
-        resultText.style.fontSize = "40px";
         resultText.textContent = value;
         return false;
     }
@@ -31,8 +30,8 @@ function clearAll() {
     secondOperand = ""; 
     currentOperation = null; 
     result = 0;
-    updateMainDisplay("");
-    updateOperationDisplay("");
+    updateMainDisplay("0");
+    updateOperationDisplay("0");
 }
 
 function backspace() {
@@ -111,8 +110,8 @@ function calculateResult() {
             return;
     }
 
-    // Limit floating point precision
-    result = parseFloat(result.toFixed(6)); // More precision for general calc
+    // Limit floating point precision to 6 decimal places
+    result = parseFloat(result.toFixed(6)); 
 
     if (updateMainDisplay(result.toString())) {
         firstOperand = ""; // Clear if result is too big
@@ -206,12 +205,12 @@ function handleOperation(operatorSymbol, operationName) {
 // Equals button
 document.getElementById('equals').addEventListener("click", () => {
     if (firstOperand !== "" && secondOperand !== "" && currentOperation !== null) {
-        updateOperationDisplay(`${firstOperand} ${getOperatorSymbol(currentOperation)} ${secondOperand} =`);
+        updateOperationDisplay(`${firstOperand} ${getOperatorSymbol(currentOperation)} ${secondOperand}`);
         calculateResult();
     } else if (firstOperand !== "" && currentOperation !== null && secondOperand === "") {
         // If an operation is selected but no second operand, pressing equals should use firstOperand as second
         secondOperand = firstOperand;
-        updateOperationDisplay(`${firstOperand} ${getOperatorSymbol(currentOperation)} ${secondOperand} =`);
+        updateOperationDisplay(`${firstOperand} ${getOperatorSymbol(currentOperation)} ${secondOperand}`);
         calculateResult();
     }
 });
@@ -225,3 +224,22 @@ function getOperatorSymbol(operationName) {
         default: return "";
     }
 }
+
+// switching theme buttons
+let switchButtons = document.querySelectorAll(".button-theme");
+switchButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Remove all theme classes from the body
+        document.body.classList.remove("theme-comic", "theme-western", "theme-dark", "theme-default");
+        let introText = document.body.querySelector("introText");
+
+        // Add the selected theme class
+        const selectedTheme = button.value.toLowerCase();
+
+        // Add class only if it's not default
+        if (selectedTheme !== "default") {
+            introText = "";
+            document.body.classList.add(`theme-${selectedTheme}`);
+        }
+    });
+});

@@ -1,82 +1,150 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
 
-* {
+body {
     background-color: lightgray;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-html, body {
-    height: 100%;
-    font-size: 16px;
-    color: black;
-    font-family: 'Roboto Mono', monospace;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    min-height: 100%;
+    align-items: flex-start;
+    padding: 60px 40px;
+    gap: 60px;
+    max-width: 1200px;
+}
+
+/* theme introduction section */
+.intro {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    text-align: left;
+}
+.themes {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.button-theme {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: #9c9c9c9c 0px 3px 8px;
+}
+/* when hovering, change button to theme */
+.western:hover {
+    font-family: "Rye", serif;
+    font-weight: 600;
+    border: 4px solid #4b2e00;
+    background-image: url('https://tse3.mm.bing.net/th?id=OIP.15lxJS6Miub8z6PGbHBWTwHaEo&pid=Api&P=0&h=220');
+    color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 4px 4px 0 #00000055;
+    transform: rotate(-1deg) scale(1.02);
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+.comic:hover {
+    font-family: "Bangers", system-ui;
+    font-size: 20px;
+    border: 4px solid black;
+    background-image: url('https://tse2.mm.bing.net/th?id=OIP.wwnoxQhTrRKSoUCY0_WdGgHaDV&pid=Api&P=0&h=220');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #00000055;
+    transform: rotate(-1deg);
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+.dark:hover {
+    font-family: "JetBrains Mono", monospace;
+    border: none;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 4px 4px 0 #00000055;
+    transform: rotate(-1deg) scale(1.02);
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+.default:hover {
+    font-family: 'Roboto Mono', monospace;
+    border: none;
+    background-color: #f3f3f3;
+    color: grey;
+    border-radius: 20px;
+    box-shadow: 4px 4px 0 #00000055;
+    transform: rotate(-1deg) scale(1.02);
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
 }
 
 .calculator {
+    font-family: 'Roboto Mono', monospace;
     display: flex;
     flex-direction: column;
     width: 400px;
     height: 550px;
     padding: 10px;
-    border-radius: 10px;
-    overflow: hidden;
     justify-content: center;
     align-items: center;
 }
 
+/* display settings */
 .display {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: white;
     gap: 20px;
     margin: 15px;
-    width: 380px;
+    width: 360px;
     height: 120px;
     border-radius: 25px;
-    justify-content: space-between;
     align-items: flex-end;
     box-shadow: #9c9c9c9c 0px 3px 8px;
     overflow: hidden;
-}
-#calculation {
-    background-color: white;
-    padding-top: 10px;
-}
-#input {
-    background-color: white;
     padding: 10px;
+    font-size: 36px;
+    align-items: end;
+}
+#display-calculation {
+    width: 380px;
+    text-align: right;
+    word-wrap: break-word;
+    font-size: 25px;
+}
+#display-input {
+    width: 380px;
+    text-align: right;
+    word-wrap: break-word;
 }
 
+/* calculator button settings */
 .buttons-grid {
     display: grid;
     padding-top: 10px;
     width: 380px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "clear clear delete delete"
-                         "seven eight nine divide"
-                         "four five six multiply"
-                         "one two three subtract"
-                         "decimal zero equals add";
     grid-auto-rows: 70px;
     gap: 10px;
 }
-
 .button {
     font-size: 30px;
     border-radius: 20px;
     color: grey;
-    font-family: inherit;
     background-color: #f3f3f3;
     cursor: pointer;
+    border: none;
     box-shadow: #9c9c9c9c 0px 3px 8px;
 }
 .button:hover {
@@ -84,23 +152,122 @@ html, body {
     transform: scale(1.05);
 }
 #clear,
-#delete {
+#equals {
     grid-column: span 2;
 }
-
+/* button color settings */
 .operation:hover {
-    background-color: orange;
+    background-color: lightsalmon;
     color: #f3f3f3;
 }
 #equals:hover {
-    background-color: lightgreen;
+    background-color: palegreen;
     color: #f3f3f3;
 }
 #clear:hover {
-    background-color: red;
+    background-color: lightcoral;
     color: #f3f3f3;
 }
 #delete:hover {
-    background-color: blue;
+    background-color: lightblue;
     color: #f3f3f3;
+}
+
+/* when the screen is less than 700px */
+@media (max-width:930px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+/* ============ Western Theme ============= */
+body.theme-western {
+    background-color: #f4e4c1;
+    font-family: "Rye", serif;
+    color: #4b2e00;
+}
+body.theme-western .display {
+    background-color: #fff7e6;
+    border: 3px solid #4b2e00;
+}
+body.theme-western button {
+    background-color: #f8e0b0;
+    border: 2px solid #4b2e00;
+    font-family: "Rye", serif;
+    color: #4b2e00;
+}
+
+/* ============ Dark Theme ============= */
+body.theme-dark {
+    background-color: #121212;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+}
+body.theme-dark .display {
+    background-color: #1d1d1d;
+    color: white;
+}
+body.theme-dark button {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* ============ Comic Book Theme ============= */
+body.theme-comic {
+    background-image: url('https://tse2.mm.bing.net/th?id=OIP.wwnoxQhTrRKSoUCY0_WdGgHaDV&pid=Api&P=0&h=220');
+    background-size: cover;
+    background-position: center;
+}
+body.theme-comic .container{
+    font-family: "Bangers", system-ui;
+    min-height: 100%;
+    background-size: 100%;
+    background-blend-mode: lighten;
+    border: 4px solid black;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0 black;
+    transition: all 0.2s ease-in-out;
+}
+body.theme-comic .display {
+    font-family: "Bangers", system-ui;
+    font-size: 45px;
+    border: 4px solid black;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0 black;
+    text-shadow: 1px 1px 0 #000;
+    transition: all 0.2s ease-in-out;
+}
+body.theme-comic button {
+    font-family: "Bangers", system-ui;
+    font-size: 30px;
+    border: 4px solid black;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0 black;
+    transform: rotate(-1deg);
+    transition: all 0.2s ease-in-out;
+}
+/* comic button settings */
+body.theme-comic .number,
+body.theme-comic #decimal {
+    background-color: #f1c40f;
+    color: black;
+}
+body.theme-comic .operation {
+    background-color: #457b9d;
+    color: white;
+}
+body.theme-comic #equals {
+    background-color: red;
+    color: white;
+}
+body.theme-comic #clear {
+    background-color: black;
+    color: red;
+}
+body.theme-comic #delete {
+    background-color: black;
+    color: #f1c40f;
 }
