@@ -231,9 +231,7 @@ switchButtons.forEach(button => {
     button.addEventListener("click", () => {
         // Remove all theme classes from the body
         document.body.classList.remove("theme-comic", "theme-western", "theme-dark", "theme-default");
-        const introParagraph = document.getElementById("introParagraph");
         const introHeader = document.getElementById("introHeader");
-        introParagraph.style.display = "none";
         introHeader.style.display = "none";
 
         // Add the selected theme class
@@ -243,8 +241,7 @@ switchButtons.forEach(button => {
         if (selectedTheme !== "default") {
             document.body.classList.add(`theme-${selectedTheme}`);
         } else {
-            // show introParagraph and introHeader
-            introParagraph.style.display = "block";
+            // show introHeader
             introHeader.style.display = "block";
         }
     });
