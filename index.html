@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Pozole</title>
+        <title>My TOP Projects</title>
         <meta charset="UTF-8">
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
-            <h1>My TOP Projects</h1>
-            <!-- dashboard of my top projects -->
-            <ul>
-                <!-- add a picture with each project -->
-                <li><a href="recipes/index.html">Recipes plain HTML</a></li>
-                <li><a href="landing-page/index.html">Basic Landing Page</a></li>
-                <li><a href="etch-a-sketch/index.html">Etch-a-Sketch</a></li>
-                <li><a href="calculator/index.html">Thematic Calculator</a></li>
-            </ul>
+            <div class="title"><h1>My TOP Projects</h1>
+                <div><h2>projects</h2></div>
+            </div>
+            <!-- dashboard of my TOP projects -->
+            <p>Explore some of my projects below. For more, visit my GitHub profile. <br />June 2025 </p>
+            
+            <div class="row">
+                <div class="item">
+                    <div class="item-overlay">
+                        <h3>Recipes</h2>
+                        <a href="https://github.com/sjacobo3/TOP-foundations/tree/main/recipes">Recipes Website</a>
+                        <button onclick="window.location.href='recipes/index.html';">visit website</button>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-overlay">
+                        <h3>Basic Landing Page</h2>
+                        <!-- <img /> -->
+                        <button onclick="window.location.href='landing-page/index.html';">visit website</button>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-overlay">
+                        <h3>Etch-a-Sketch</h2>
+                            <a href="https://github.com/lionelsamrat10/color_game">Color Game Project</a>
+                        <button onclick="window.location.href='etch-a-sketch/index.html';">visit website</button>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-overlay">
+                        <h3>Calculator</h2>
+                        <!-- <img src="images/calculator.png"/> -->
+                        </br>
+                        <button onclick="window.location.href='calculator/index.html';">visit website</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="script.js"></script>
     </body>
