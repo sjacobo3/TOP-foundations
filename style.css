@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    /* background-color: lightgray; */
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 500px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.container .item {
+    margin: 2rem 0;
+    height: 320px;
+    width: 100%;
+    position: relative;
+}
+/* set background photos for each item */
+.container .row .item:nth-child(1) {
+    background: url(images/recipe-page.png) center/cover no-repeat;
+}
+.container .row .item:nth-child(2) {
+    background: url(images/landing-page.png) center/cover no-repeat;
+}
+.container .row .item:nth-child(3) {
+    background: url(images/etch-a-sketch.png) center/cover no-repeat;
+}
+.container .row .item:nth-child(4) {
+    background: url(images/calculator.png) center/cover no-repeat;
+}
+
+.container .item .item-overlay {
+    position: absolute;
+    height: 320px;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+.container .item .item-overlay a{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.container .item .item-overlay h3{
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: white;
+}
+.container .item:hover .item-overlay{
+    opacity: 0.7;
+}
